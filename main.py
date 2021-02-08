@@ -13,7 +13,9 @@ if __name__ == '__main__':
     # parser = argparse.ArgumentParser(description="It's a description which can be seen in the terminal.")
     # 给ArgumentParser添加程序参数信息是通过函数add_argument()实现的。
     # 通常，这些调用指定 ArgumentParser 如何获取命令行字符串并将其转换为对象。这些信息在 parse_args() 调用时被存储和使用。
-    parser.add_argument('--dataset', default=TrainConf.weibo)
+    # 默认参数，dataset=weibo, with_radical, conv_gru, bigru_crf, all.
+    # parser.add_argument('--dataset', default=TrainConf.weibo)  # 默认是TrainConf中的weibo dataset
+    parser.add_argument('--dataset', default=TrainConf.drink)  # 我们的drink dataset
     parser.add_argument('--with_radical', default=TrainConf.with_radical)
     parser.add_argument('--network', default=TrainConf.conv_gru)
     parser.add_argument('--tagger', default=TrainConf.bigru_crf)
@@ -29,3 +31,5 @@ if __name__ == '__main__':
         'network': args.network,
         'tagger': args.tagger,
     })
+
+

@@ -27,7 +27,7 @@ def gen_pure_data(
         with open(input_file + suffix, 'r', encoding='utf-8') as f:
             current_sentence = ''
             for line in f:
-                line = line.strip()
+                line = line.strip()  # 去除字符串首尾字符，默认是空格
                 if not line:
                     result.append(current_sentence)
                     current_sentence = ''
@@ -270,8 +270,8 @@ def run(entity_type=EntityType.all):
     gen_pure_data()
 
     for fname in file_names:
-        process_url(fname)
-        remove_english(fname)
+        # process_url(fname)
+        # remove_english(fname)
         replace_rare_punctuation(fname)
 
     for fname in file_names:

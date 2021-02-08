@@ -2,6 +2,7 @@ class TrainConf:
     # dataset
     weibo = 'weibo'
     msra = 'msra'
+    drink = 'drink'
 
     # radical conf
     with_radical = 1

@@ -14,10 +14,24 @@ def concat_weibo():
                 for line in f:
                     lines.append(line)
 
-        with open('process_character/data_preprocess/weibo_raw_data.txt', 'w', encoding='utf-8') \
-                as f:
+        with open('process_character/data_preprocess/weibo_raw_data.txt', 'w', encoding='utf-8') as f:
             f.writelines(lines)
     print("Done with Weibo")
+
+#
+# def concat_drinks():
+#     if not os.path.exists('process_character/data_preprocess/drinks_raw_data.txt'):
+#         lines = []
+#         for file_suffix in ['train', 'test', 'dev']:
+#             with open('process_character/data_preprocess/drinks.%s' % file_suffix, 'r',
+#                       encoding='utf16') as f:
+#                 for line in f:
+#                     lines.append(line)
+#
+#         with open('process_character/data_preprocess/drink_raw_data.txt', 'w', encoding='utf-8') as f:
+#             f.writelines(line)
+#     print("Done with Drinks")
+
 
 def concat_msra():
     """
@@ -37,6 +51,8 @@ def concat_msra():
             f.writelines(lines)
     print("Done with MSRA")
 
+
 if __name__ == '__main__':
     concat_weibo()
+    # concat_drinks()
     concat_msra()
