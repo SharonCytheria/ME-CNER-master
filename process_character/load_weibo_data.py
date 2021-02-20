@@ -3,7 +3,7 @@ import pickle
 import re
 
 from entity_type import EntityType
-from process_character.dicts import char2radical, label_dict, character_dict, phrase_dict
+from process_character.dicts import label_dict, character_dict, phrase_dict
 from process_character.utils import is_cn_or_digit
 
 VALID_CHARS = r'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,，。？?!！@￥*《》、【】．·-_@'

@@ -43,8 +43,8 @@ def load_character_indexes():
     char_index_dict = {}
     char_index_count = 1
     #  weibo_raw_data即weiboNER_2nd_conll三个数据集的集合,即为"字0 1"的结构
-    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/weibo_raw_data.txt',
-              'r', encoding='utf-8') as f:
+    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+              'process_character/data_preprocess/weibo_raw_data.txt', 'r', encoding='utf-8') as f:
         for line in f:
             # 如果当前行为空，跳下一行；即一句话结束
             if not line.strip():
@@ -67,7 +67,8 @@ def load_phrase_indexes():
     if not os.path.exists('/Users/sharoncytheria/Downloads/ME-CNER-master/'
                           'process_character/data_preprocess/phrase_indexes.txt'):
 
-        with open('process_character/data_preprocess/weibo_raw_data.txt', 'r', encoding='utf-8') as f:
+        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+                  'process_character/data_preprocess/weibo_raw_data.txt', 'r', encoding='utf-8') as f:
             phrase_list = []
             sentence = []
             for line in f:
@@ -91,8 +92,8 @@ def load_phrase_indexes():
         # 在这个地方，我们对相同的词组进行去重，仅保留一个，并按照一定规则从小到大排序。
         phrase_set = list(set(phrase_list))
         phrase_set.sort(key=phrase_list.index)
-        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/phrase_indexes.txt',
-                  'w', encoding='utf-8') as f:
+        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+                  'process_character/data_preprocess/phrase_indexes.txt', 'w', encoding='utf-8') as f:
             i = 1
             for phrase in phrase_set:
                 if not phrase:
@@ -101,8 +102,8 @@ def load_phrase_indexes():
                 i = i + 1
 
     phrase_dict = {}
-    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/phrase_indexes.txt',
-              'r', encoding='utf-8') as f:
+    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+              'process_character/data_preprocess/phrase_indexes.txt', 'r', encoding='utf-8') as f:
         for line in f:
             if not line.split():
                 continue
@@ -117,7 +118,8 @@ def load_phrase_indexes():
 def load_msra_character_indexes():
     char_index_dict = {}
     char_index_count = 1
-    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/msra_raw_data.txt', 'r', encoding='utf-8') as f:
+    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+              'process_character/data_preprocess/msra_raw_data.txt', 'r', encoding='utf-8') as f:
         for line in f:
             if not line.strip():
                 continue
@@ -133,9 +135,11 @@ def load_msra_character_indexes():
 
 
 def load_msra_phrase_indexes():
-    if not os.path.exists('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/msra_phrase_indexes.txt'):
+    if not os.path.exists('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+                          'process_character/data_preprocess/msra_phrase_indexes.txt'):
 
-        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/msra_raw_data.txt', 'r', encoding='utf-8') \
+        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+                  'process_character/data_preprocess/msra_raw_data.txt', 'r', encoding='utf-8') \
                 as f:
             phrase_list = []
             sentence = []
@@ -152,7 +156,8 @@ def load_msra_phrase_indexes():
 
         phrase_set = list(set(phrase_list))
         phrase_set.sort(key=phrase_list.index)
-        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/msra_phrase_indexes.txt', 'w',
+        with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+                  'process_character/data_preprocess/msra_phrase_indexes.txt', 'w',
                   encoding='utf-8') as f:
             i = 1
             for phrase in phrase_set:
@@ -162,7 +167,8 @@ def load_msra_phrase_indexes():
                 i = i + 1
 
     phrase_dict = {}
-    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/msra_phrase_indexes.txt', 'r', encoding='utf-8') \
+    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+              'process_character/data_preprocess/msra_phrase_indexes.txt', 'r', encoding='utf-8') \
             as f:
         for line in f:
             if not line.split():
@@ -177,7 +183,8 @@ def load_msra_phrase_indexes():
 
 def load_label_indexes(dataset_type):
     label_dict = {}
-    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/process_character/data_preprocess/%slabel_indexes.txt' %
+    with open('/Users/sharoncytheria/Downloads/ME-CNER-master/'
+              'process_character/data_preprocess/%slabel_indexes.txt' %
               ('msra_' if dataset_type == Dataset.MSRA else ''),
               'r', encoding='utf-8') as f:
         for line in f:

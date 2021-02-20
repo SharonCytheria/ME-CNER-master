@@ -6,7 +6,8 @@ def is_cn_or_digit(s):
     字符是否属于汉字或数字
     """
     for c in s:
-        if not ('\u4e00' <= c <= '\u9fff' or '0' <= c <= '9'):
+        #  '\u4e00'  用来判断是否是汉字
+        if not ('\u4e00' <= c <= '\u9fff' or '0' <= c <= '9' or 'a' <= c <= 'z' or 'A' <= c <= 'Z'):
             return False
     return True
 
